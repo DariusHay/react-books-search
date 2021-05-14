@@ -2,7 +2,7 @@ import React from "react";
 
 function Form(props) {
     return (
-        <div className="input-group mb-3">
+        <div className="input-group" style={{ width: "30%", margin: "5%"}}>
         <input 
         type="text" 
         className="form-control" 

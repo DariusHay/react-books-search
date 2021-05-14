@@ -1,9 +1,9 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export default {
+export default {
 
-//     Search: function(p) {
-//         return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + p)
-//     }
+    Search: function(p) {
+        return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + p)
+    }
 
-// }
+}
