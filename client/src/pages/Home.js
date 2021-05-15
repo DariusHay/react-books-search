@@ -42,7 +42,6 @@ class Home extends React.Component {
             if (id === element.etag) {
                 this.setState({ detailed: element });
             }
-            console.log(this.state.detailed)
         });
         this.setState({ detailBool: true })
         console.log(this.state.detailed);

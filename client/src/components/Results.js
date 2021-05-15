@@ -15,7 +15,11 @@ function Results(props) {
                         style={{ height: 200, width: 200 }}/>
                         <div className="card-body">
                             <h5 className="card-title">{book.volumeInfo.title}</h5>
+                            {book.volumeInfo.authors ? (
                             <p className="card-text">By: {book.volumeInfo.authors}</p>
+                            ) : (
+                                <p className="card-text">No Author Found</p>
+                            )}
                             <a onClick={() => setDetail(book.etag)} className="btn btn-primary" style={{ cursor: 'pointer' }}>See Details</a>
                         </div>
                     </div>

@@ -31,7 +31,7 @@ function Books() {
             {books.length > 0 ? (
                 <div className="container">
                     {books.map(book => (
-                        <div className="card mb-3" style={{ maxWidth: '100%' }}>
+                        <div key={book._id} className="card mb-3" style={{ maxWidth: '100%' }}>
                             <div className="row no-gutters">
                                 <div className="col-md-4">
                                     <img src={book.image} className="card-img" alt={book.title} />

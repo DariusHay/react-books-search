@@ -3,7 +3,7 @@ const db = require("../models");
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb://localhost/reactbooksearch"
+    "mongodb://localhost/book-search"
 );
 
 const bookSeed = {

@@ -9,8 +9,18 @@ function savBook(book) {
         image: book.volumeInfo.imageLinks.thumbnail,
         link: book.volumeInfo.canonicalVolumeLink
     }
-
     API.saveBook(newBook);
+}
+
+function savBookNoAuthor(book) {
+
+    const newBookNoAuthor = {
+        title: book.volumeInfo.title,
+        description: book.volumeInfo.description,
+        image: book.volumeInfo.imageLinks.thumbnail,
+        link: book.volumeInfo.canonicalVolumeLink
+    }
+    API.saveBook(newBookNoAuthor);
 }
 
 function Details(props) {
@@ -25,11 +35,20 @@ function Details(props) {
                         <div className="card-body">
                             <h5 className="card-title">{props.card.volumeInfo.title}</h5>
                             <p className="card-text">{props.card.volumeInfo.description}</p>
-                            <p className="card-text">By: {props.card.volumeInfo.authors}</p>
-                            <a style={{ float: 'left' }} href={props.card.volumeInfo.canonicalVolumeLink} target="_blank">Book Link</a>
-                            <a style={{ float: 'right' }} href="" onClick={props.switch}>Go Back</a>
+                            {props.card.volumeInfo.authors ? <> 
+                                <p className="card-text">By: {props.card.volumeInfo.authors}</p>
+                                <a style={{ float: 'left' }} onClick={(event) => { event.preventDefault(); savBook(props.card); alert('Book successfully Saved!') }} href="">Save Book</a>
+                                </>
+                             : ( <>
+                                    <p className="card-text">No Author Found</p>
+                                    <a style={{ float: 'left' }} onClick={(event) => { event.preventDefault(); savBookNoAuthor(props.card); alert('Book successfully Saved!') }} href="">Save Book</a>
+                                    </>
+                                )}
+                            <a style={{ float: 'right' }} href={props.card.volumeInfo.canonicalVolumeLink} target="_blank">Book Link</a>
                             <br></br>
-                            <a style={{ float: 'left', marginTop: '3%' }} onClick={(event) => {event.preventDefault(); savBook(props.card)}} href="">Save Book</a>
+                            <a style={{ float: 'left', marginTop: '3%' }} href="" onClick={props.switch}>Go Back</a>
+                            
+                        
                         </div>
                     </div>
                 </div>
