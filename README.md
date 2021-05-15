@@ -4,7 +4,7 @@ React-Books-Search
 
 ## Description
 
-This is an App where the user can search books by name or author and see details about the book if found. The User also has the ability to save books to, or delete books from a collection of saved books.
+This is an App where the user can search books by name or author and see details about the book if found. The User also has the ability to save books to or delete books from a collection of saved books.
 
 ## Table of Content
 
