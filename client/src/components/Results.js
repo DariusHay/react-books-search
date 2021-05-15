@@ -1,6 +1,11 @@
 import React from "react";
 
 function Results(props) {
+
+    function setDetail(id) {
+        props.details(id)
+    }
+
     return (
         <div className="row">
             {props.res.map(book => (
@@ -11,7 +16,7 @@ function Results(props) {
                         <div className="card-body">
                             <h5 className="card-title">{book.volumeInfo.title}</h5>
                             <p className="card-text">By: {book.volumeInfo.authors}</p>
-                            <a onClick={props.detail} className="btn btn-primary">See Details</a>
+                            <a onClick={() => setDetail(book.etag)} className="btn btn-primary" style={{ cursor: 'pointer' }}>See Details</a>
                         </div>
                     </div>
                 </div>
